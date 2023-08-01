@@ -1,0 +1,83 @@
+﻿<Window x:Class="gcp_Wpf.MenuWindow.Menu_Setting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gcp_Wpf.MenuWindow"
+        mc:Ignorable="d"
+        Title="Menu_Setting" Height="70" Width="435"
+        WindowStyle="None"
+        AllowsTransparency="True" Background="#66000000" Deactivated="Window_Deactivated" Foreground="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Top">
+    <Grid>
+        <Grid>
+            <Button x:Name="Btn_CommSetting" Content="통신설정" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#02000000" BorderBrush="#FFB8D8FC" Height="50" Width="100" FontWeight="Bold" Margin="10,10,0,0" Click="Btn_CommSetting_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Foreground" Value="#FFB8D8FC"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="DarkBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="Btn_CraneSetting" Content="크레인설정" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#02000000" BorderBrush="#FFB8D8FC" Height="50" Width="100" FontWeight="Bold" Margin="115,10,0,0" Click="Btn_CraneSetting_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Foreground" Value="#FFB8D8FC"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="DarkBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="Btn_StationSetting" Content="스테이션설정" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#02000000" BorderBrush="#FFB8D8FC" Height="50" Width="100" FontWeight="Bold" Margin="220,10,0,0" Click="Btn_StationSetting_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Foreground" Value="#FFB8D8FC"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="DarkBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="Btn_ExhibitSetting" Content="금지랙설정" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#02000000" BorderBrush="#FFB8D8FC" Height="50" Width="100" FontWeight="Bold" Margin="325,10,0,0" Click="Btn_ExhibitSetting_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Foreground" Value="#FFB8D8FC"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="DarkBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

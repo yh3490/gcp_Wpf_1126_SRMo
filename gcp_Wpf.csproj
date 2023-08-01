@@ -1,0 +1,181 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="image\**" />
+    <EmbeddedResource Remove="image\**" />
+    <None Remove="image\**" />
+    <Page Remove="image\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="arrow_fwd.png" />
+    <None Remove="arrow_right.png" />
+    <None Remove="Asset5.png" />
+    <None Remove="Asset6.png" />
+    <None Remove="Background.png" />
+    <None Remove="carrige.png" />
+    <None Remove="logo.png" />
+    <None Remove="Resources\arrow_bwd.png" />
+    <None Remove="Resources\arrow_fwd.png" />
+    <None Remove="Resources\arrow_left.png" />
+    <None Remove="Resources\arrow_right.png" />
+    <None Remove="Resources\Asset2.png" />
+    <None Remove="Resources\Asset5.png" />
+    <None Remove="Resources\Asset6.png" />
+    <None Remove="Resources\Background.png" />
+    <None Remove="Resources\carrige.png" />
+    <None Remove="Resources\checked.png" />
+    <None Remove="Resources\connected.png" />
+    <None Remove="Resources\disconnected.png" />
+    <None Remove="Resources\Empty2_off.png" />
+    <None Remove="Resources\Emptyoff.png" />
+    <None Remove="Resources\Emptyon.png" />
+    <None Remove="Resources\Emtpy2_on.png" />
+    <None Remove="Resources\fastD.png" />
+    <None Remove="Resources\fastDP.png" />
+    <None Remove="Resources\fastL.png" />
+    <None Remove="Resources\fastLP.png" />
+    <None Remove="Resources\fastR.png" />
+    <None Remove="Resources\fastRP.png" />
+    <None Remove="Resources\fastU.png" />
+    <None Remove="Resources\fastUP.png" />
+    <None Remove="Resources\fkC.png" />
+    <None Remove="Resources\fkCN.png" />
+    <None Remove="Resources\fkL.png" />
+    <None Remove="Resources\fkLN.png" />
+    <None Remove="Resources\fkM.png" />
+    <None Remove="Resources\fkMN.png" />
+    <None Remove="Resources\fkR.png" />
+    <None Remove="Resources\fkRN.png" />
+    <None Remove="Resources\logo.png" />
+    <None Remove="Resources\moveL.png" />
+    <None Remove="Resources\moveLC.png" />
+    <None Remove="Resources\moveLN.png" />
+    <None Remove="Resources\moveR.png" />
+    <None Remove="Resources\moveRC.png" />
+    <None Remove="Resources\moveRN.png" />
+    <None Remove="Resources\rack.png" />
+    <None Remove="Resources\rack_proh.png" />
+    <None Remove="Resources\rack_sel.png" />
+    <None Remove="Resources\rack_spec.png" />
+    <None Remove="Resources\slowD.png" />
+    <None Remove="Resources\slowDP.png" />
+    <None Remove="Resources\slowL.png" />
+    <None Remove="Resources\slowLP.png" />
+    <None Remove="Resources\slowR.png" />
+    <None Remove="Resources\slowRP.png" />
+    <None Remove="Resources\slowU.png" />
+    <None Remove="Resources\slowUP.png" />
+    <None Remove="Resources\srmmain.png" />
+    <None Remove="Resources\test_box.png" />
+    <None Remove="Resources\unchecked.png" />
+    <None Remove="srmmain.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\checked.png" />
+    <Resource Include="Resources\connected.png" />
+    <Resource Include="Resources\disconnected.png" />
+    <Resource Include="Resources\fastUP.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EasyModbusTCP" Version="5.6.0" />
+    <PackageReference Include="McProtocol" Version="1.2.5" />
+    <PackageReference Include="System.IO.Ports" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Empty2_off.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\arrow_bwd.png" />
+    <Resource Include="Resources\arrow_fwd.png" />
+    <Resource Include="Resources\arrow_left.png" />
+    <Resource Include="Resources\arrow_right.png" />
+    <Resource Include="Resources\Asset2.png" />
+    <Resource Include="Resources\Asset5.png" />
+    <Resource Include="Resources\Asset6.png" />
+    <Resource Include="Resources\Background.png" />
+    <Resource Include="Resources\carrige.png" />
+    <Resource Include="Resources\Emptyoff.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Emptyon.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Emtpy2_on.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\fastD.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\fastDP.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\fastL.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\fastLP.png" />
+    <Resource Include="Resources\fastR.png" />
+    <Resource Include="Resources\fastRP.png" />
+    <Resource Include="Resources\fastU.png" />
+    <Resource Include="Resources\fkC.png" />
+    <Resource Include="Resources\fkCN.png" />
+    <Resource Include="Resources\fkM.png" />
+    <Resource Include="Resources\fkMN.png" />
+    <Resource Include="Resources\logo.png" />
+    <Resource Include="Resources\moveL.png" />
+    <Resource Include="Resources\moveLC.png" />
+    <Resource Include="Resources\moveLN.png" />
+    <Resource Include="Resources\moveR.png" />
+    <Resource Include="Resources\moveRC.png" />
+    <Resource Include="Resources\moveRN.png" />
+    <Resource Include="Resources\rack.png" />
+    <Resource Include="Resources\rack_proh.png" />
+    <Resource Include="Resources\rack_sel.png" />
+    <Resource Include="Resources\rack_spec.png" />
+    <Resource Include="Resources\slowD.png" />
+    <Resource Include="Resources\slowDP.png" />
+    <Resource Include="Resources\slowL.png" />
+    <Resource Include="Resources\slowLP.png" />
+    <Resource Include="Resources\slowR.png" />
+    <Resource Include="Resources\slowRP.png" />
+    <Resource Include="Resources\slowU.png" />
+    <Resource Include="Resources\slowUP.png" />
+    <Resource Include="Resources\srmmain.png" />
+    <Resource Include="Resources\test_box.png" />
+    <Resource Include="Resources\unchecked.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,642 @@
+﻿<Page x:Class="gcp_Wpf.PageCraneSet"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:gcp_Wpf"
+      xmlns:lx="clr-namespace:gcp_Wpf"
+      mc:Ignorable="d" d:DesignWidth="800"
+      Title="PageCraneSet">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="89*"/>
+                </Grid.RowDefinitions>
+                <Border x:Name="border" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0">
+                    <Label Content="크레인 정보" Margin="9,5,9,6" Height="34" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.519,0.501" HorizontalAlignment="Left" VerticalAlignment="Stretch" FontSize="16"/>
+                </Border>
+                <GridSplitter HorizontalAlignment="Stretch" Height="2" Margin="0,0,0,0" VerticalAlignment="Top" Width="780" Grid.Row="1"/>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="20*"/>
+                    </Grid.ColumnDefinitions>
+                    <GridSplitter Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="4" Margin="3,0,3,0"/>
+                    <GridSplitter Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="4" Margin="3,0,3,0"/>
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="크레인 타입" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.519,0.501"/>
+                        <Label Content="포크타입" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.519,0.501"/>
+                        <Label Content="크레인 No" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.519,0.501"/>
+                        <Label Content="열 (ROW)" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.519,0.501"/>
+                        <Label Content="행 (BAY)" Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.519,0.501"/>
+                        <Label Content="단 (Level)" Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.519,0.501"/>
+                        <Label Content="스테이션" Grid.Row="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.519,0.501"/>
+                        <Label Content="스페셜 렉" Grid.Row="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.519,0.501"/>
+                    </Grid>
+                    <Grid Grid.Column="1" Margin="10,0,10,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="크레인 #1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.519,0.501"/>
+                        <TextBox x:Name="edit_srmType1" Grid.Row="2" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" BorderBrush="#FFB8D8FC" Foreground="White" Background="{x:Null}" VerticalAlignment="Stretch">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <ComboBox x:Name="combo_forkType1" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{x:Null}">
+                            <ComboBox.Style>
+                                <Style TargetType="{x:Type ComboBox}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type ComboBox}">
+                                                <Border BorderThickness="1,1,1,1"
+                                    BorderBrush="#FFB8D8FC" CornerRadius="5,5,5,5">
+                                                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="3,3,3,3">
+                                                        <ToggleButton x:Name="ToggleButton"
+                                            Grid.Column="2"
+                                            Focusable="False"
+                                            IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                            ClickMode="Press" Background="#02000000" BorderThickness="0"/>
+                                                        <ContentPresenter x:Name="ContentSite"
+                                            IsHitTestVisible="False"
+                                            Content="{TemplateBinding SelectionBoxItem}"
+                                            ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                            ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                            VerticalAlignment="Stretch"
+                                            HorizontalAlignment="Stretch" Width="108" Height="21" Grid.ColumnSpan="1"/>
+                                                        <TextBox x:Name="PART_EditableTextBox"
+                                            Style="{x:Null}"
+                                            HorizontalAlignment="Stretch"
+                                            VerticalAlignment="Stretch"
+                                            Margin="3,3,23,3"
+                                            Focusable="True"
+                                            Background="Transparent"
+                                            Visibility="Hidden"
+                                            IsReadOnly="{TemplateBinding IsReadOnly}" />
+                                                        <Popup x:Name="Popup"
+                                            Placement="Bottom"
+                                            IsOpen="{TemplateBinding IsDropDownOpen}"
+                                            AllowsTransparency="True"
+                                            Focusable="False"
+                                            PopupAnimation="Slide">
+                                                            <Grid x:Name="DropDown"
+                                                SnapsToDevicePixels="True"
+                                                MinWidth="{TemplateBinding ActualWidth}"
+                                                MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                                                <Border x:Name="DropDownBorder"
+                                                    BorderThickness="1"
+                                                    BorderBrush="White" Background="#99000000" />
+                                                                <ScrollViewer Margin="10,10,10,10"
+                                                    SnapsToDevicePixels="True">
+                                                                    <StackPanel IsItemsHost="True"
+                                                        KeyboardNavigation.DirectionalNavigation="Contained" />
+                                                                </ScrollViewer>
+                                                            </Grid>
+                                                        </Popup>
+                                                    </Grid>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ComboBox.Style>
+                            <ListBoxItem Content="한국어" Foreground="White"/>
+                            <ListBoxItem Content="영어" Foreground="White"/>
+                            <ListBoxItem Content="중국어" Foreground="White"/>
+                        </ComboBox>
+                        <TextBox x:Name="edit_srmID1" Grid.Row="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" BorderBrush="#FFB8D8FC" Foreground="White" Background="{x:Null}" VerticalAlignment="Stretch" PreviewTextInput="NumberTextBox_PreviewTextInput">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                                <Style TargetType="TextBox">
+                                    <Setter Property="CaretBrush" Value="Red" />
+                                    <!-- Set the desired color for the caret -->
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBox x:Name="edit_srmRow1" Grid.Row="4" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" BorderBrush="#FFB8D8FC" Foreground="White" Background="{x:Null}" VerticalAlignment="Stretch">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBox x:Name="edit_srmBay1" Grid.Row="5" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" BorderBrush="#FFB8D8FC" Foreground="White" Background="{x:Null}" VerticalAlignment="Stretch">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBox x:Name="edit_srmLev1" Grid.Row="6" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" BorderBrush="#FFB8D8FC" Foreground="White" Background="{x:Null}" VerticalAlignment="Stretch">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBox x:Name="edit_srmStn1" Grid.Row="7" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" BorderBrush="#FFB8D8FC" Foreground="White" Background="{x:Null}" VerticalAlignment="Stretch">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <ComboBox x:Name="combo_Station1" Grid.Row="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{x:Null}">
+                            <ComboBox.Style>
+                                <Style TargetType="{x:Type ComboBox}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type ComboBox}">
+                                                <Border BorderThickness="1,1,1,1"
+                                    BorderBrush="#FFB8D8FC" CornerRadius="5,5,5,5">
+                                                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="3,3,3,3">
+                                                        <ToggleButton x:Name="ToggleButton"
+                                            Grid.Column="2"
+                                            Focusable="False"
+                                            IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                            ClickMode="Press" Background="#02000000" BorderThickness="0"/>
+                                                        <ContentPresenter x:Name="ContentSite"
+                                            IsHitTestVisible="False"
+                                            Content="{TemplateBinding SelectionBoxItem}"
+                                            ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                            ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                            VerticalAlignment="Stretch"
+                                            HorizontalAlignment="Stretch" Width="108" Height="21" Grid.ColumnSpan="1"/>
+                                                        <TextBox x:Name="PART_EditableTextBox"
+                                            Style="{x:Null}"
+                                            HorizontalAlignment="Stretch"
+                                            VerticalAlignment="Stretch"
+                                            Margin="3,3,23,3"
+                                            Focusable="True"
+                                            Background="Transparent"
+                                            Visibility="Hidden"
+                                            IsReadOnly="{TemplateBinding IsReadOnly}" />
+                                                        <Popup x:Name="Popup"
+                                            Placement="Bottom"
+                                            IsOpen="{TemplateBinding IsDropDownOpen}"
+                                            AllowsTransparency="True"
+                                            Focusable="False"
+                                            PopupAnimation="Slide">
+                                                            <Grid x:Name="DropDown"
+                                                SnapsToDevicePixels="True"
+                                                MinWidth="{TemplateBinding ActualWidth}"
+                                                MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                                                <Border x:Name="DropDownBorder"
+                                                    BorderThickness="1"
+                                                    BorderBrush="White" Background="#99000000" />
+                                                                <ScrollViewer Margin="10,10,10,10"
+                                                    SnapsToDevicePixels="True">
+                                                                    <StackPanel IsItemsHost="True"
+                                                        KeyboardNavigation.DirectionalNavigation="Contained" />
+                                                                </ScrollViewer>
+                                                            </Grid>
+                                                        </Popup>
+                                                    </Grid>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ComboBox.Style>
+                            <ListBoxItem Content="한국어" Foreground="White"/>
+                            <ListBoxItem Content="영어" Foreground="White"/>
+                            <ListBoxItem Content="중국어" Foreground="White"/>
+                        </ComboBox>
+                    </Grid>
+                    <Grid Grid.Column="3" Margin="10,0,10,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="크레인 #2" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.519,0.501"/>
+                        <TextBox x:Name="edit_srmType2" Grid.Row="2" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" BorderBrush="#FFB8D8FC" Foreground="White" Background="{x:Null}" VerticalAlignment="Stretch">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <ComboBox x:Name="combo_forkType2" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{x:Null}">
+                            <ComboBox.Style>
+                                <Style TargetType="ComboBox">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ComboBox">
+                                                <Border BorderThickness="1,1,1,1"
+                       BorderBrush="#FFB8D8FC" CornerRadius="5,5,5,5">
+                                                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="3,3,3,3">
+                                                        <ToggleButton x:Name="ToggleButton"
+                                            Grid.Column="2"
+                                      Focusable="False"
+                                      IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
+                                      ClickMode="Press" Background="#02000000" BorderThickness="0">
+                                                        </ToggleButton>
+                                                        <ContentPresenter x:Name="ContentSite"
+                                          IsHitTestVisible="False"
+                                          Content="{TemplateBinding SelectionBoxItem}"
+                                          ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                          ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                          VerticalAlignment="Stretch"
+                                          HorizontalAlignment="Stretch" Width="108" Height="21" Grid.ColumnSpan="1">
+                                                        </ContentPresenter>
+                                                        <TextBox x:Name="PART_EditableTextBox"
+                                 Style="{x:Null}"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Center"
+                                 Margin="3,3,23,3"
+                                 Focusable="True"
+                                 Background="Transparent"
+                                 Visibility="Hidden"
+                                 IsReadOnly="{TemplateBinding IsReadOnly}" />
+                                                        <Popup x:Name="Popup"
+                               Placement="Bottom"
+                               IsOpen="{TemplateBinding IsDropDownOpen}"
+                               AllowsTransparency="True"
+                               Focusable="False"
+                               PopupAnimation="Slide">
+                                                            <Grid x:Name="DropDown"
+                                  SnapsToDevicePixels="True"
+                                  MinWidth="{TemplateBinding ActualWidth}"
+                                  MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                                                <Border x:Name="DropDownBorder"
+                                        Background="White"
+                                        BorderThickness="1"
+                                        BorderBrush="Black" />
+                                                                <ScrollViewer Margin="4,6,4,6"
+                                              SnapsToDevicePixels="True">
+                                                                    <StackPanel IsItemsHost="True"
+                                                KeyboardNavigation.DirectionalNavigation="Contained" />
+                                                                </ScrollViewer>
+                                                            </Grid>
+                                                        </Popup>
+                                                    </Grid>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ComboBox.Style>
+                            <ComboBoxItem Content="ComboBoxItem"/>
+                        </ComboBox>
+                        <TextBox x:Name="edit_srmID2" Grid.Row="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" BorderBrush="#FFB8D8FC" Foreground="White" Background="{x:Null}" VerticalAlignment="Stretch">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBox x:Name="edit_srmRow2" Grid.Row="4" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" BorderBrush="#FFB8D8FC" Foreground="White" Background="{x:Null}" VerticalAlignment="Stretch">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBox x:Name="edit_srmBay2" Grid.Row="5" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" BorderBrush="#FFB8D8FC" Foreground="White" Background="{x:Null}" VerticalAlignment="Stretch">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBox x:Name="edit_srmLev2" Grid.Row="6" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" BorderBrush="#FFB8D8FC" Foreground="White" Background="{x:Null}" VerticalAlignment="Stretch">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBox x:Name="edit_srmStn2" Grid.Row="7" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" BorderBrush="#FFB8D8FC" Foreground="White" Background="{x:Null}" VerticalAlignment="Stretch">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <ComboBox x:Name="combo_Station2" Grid.Row="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{x:Null}">
+                            <ComboBox.Style>
+                                <Style TargetType="{x:Type ComboBox}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type ComboBox}">
+                                                <Border BorderThickness="1,1,1,1"
+                                    BorderBrush="#FFB8D8FC" CornerRadius="5,5,5,5">
+                                                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="3,3,3,3">
+                                                        <ToggleButton x:Name="ToggleButton"
+                                            Grid.Column="2"
+                                            Focusable="False"
+                                            IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                            ClickMode="Press" Background="#02000000" BorderThickness="0"/>
+                                                        <ContentPresenter x:Name="ContentSite"
+                                            IsHitTestVisible="False"
+                                            Content="{TemplateBinding SelectionBoxItem}"
+                                            ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                            ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                            VerticalAlignment="Stretch"
+                                            HorizontalAlignment="Stretch" Width="108" Height="21" Grid.ColumnSpan="1"/>
+                                                        <TextBox x:Name="PART_EditableTextBox"
+                                            Style="{x:Null}"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Center"
+                                            Margin="3,3,23,3"
+                                            Focusable="True"
+                                            Background="Transparent"
+                                            Visibility="Hidden"
+                                            IsReadOnly="{TemplateBinding IsReadOnly}" />
+                                                        <Popup x:Name="Popup"
+                                            Placement="Bottom"
+                                            IsOpen="{TemplateBinding IsDropDownOpen}"
+                                            AllowsTransparency="True"
+                                            Focusable="False"
+                                            PopupAnimation="Slide">
+                                                            <Grid x:Name="DropDown"
+                                                SnapsToDevicePixels="True"
+                                                MinWidth="{TemplateBinding ActualWidth}"
+                                                MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                                                <Border x:Name="DropDownBorder"
+                                                    BorderThickness="1"
+                                                    BorderBrush="Black" Background="#33FFFFFF" />
+                                                                <ScrollViewer Margin="10,10,10,10"
+                                                    SnapsToDevicePixels="True">
+                                                                    <StackPanel IsItemsHost="True"
+                                                        KeyboardNavigation.DirectionalNavigation="Contained" />
+                                                                </ScrollViewer>
+                                                            </Grid>
+                                                        </Popup>
+                                                    </Grid>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ComboBox.Style>
+                            <ListBoxItem Content="한국어" Height="20"/>
+                            <ListBoxItem Content="영어"/>
+                            <ListBoxItem Content="중국어"/>
+                            <ComboBoxItem Content="ComboBoxItem" Height="20" Foreground="White"/>
+                        </ComboBox>
+                    </Grid>
+                    <Grid Grid.Column="5" Margin="10,0,10,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="크레인 #3" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.519,0.501"/>
+                        <TextBox x:Name="edit_srmType3" Grid.Row="2" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" BorderBrush="#FFB8D8FC" Foreground="White" Background="{x:Null}" VerticalAlignment="Stretch">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <ComboBox x:Name="combo_forkType3" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{x:Null}">
+                            <ComboBox.Style>
+                                <Style TargetType="ComboBox">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ComboBox">
+                                                <Border BorderThickness="1,1,1,1"
+                       BorderBrush="#FFB8D8FC" CornerRadius="5,5,5,5">
+                                                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="3,3,3,3">
+                                                        <ToggleButton x:Name="ToggleButton"
+                                            Grid.Column="2"
+                                      Focusable="False"
+                                      IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
+                                      ClickMode="Press" Background="#02000000" BorderThickness="0">
+                                                        </ToggleButton>
+                                                        <ContentPresenter x:Name="ContentSite"
+                                          IsHitTestVisible="False"
+                                          Content="{TemplateBinding SelectionBoxItem}"
+                                          ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                          ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                          VerticalAlignment="Stretch"
+                                          HorizontalAlignment="Stretch" Width="108" Height="21" Grid.ColumnSpan="1">
+                                                        </ContentPresenter>
+                                                        <TextBox x:Name="PART_EditableTextBox"
+                                 Style="{x:Null}"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Center"
+                                 Margin="3,3,23,3"
+                                 Focusable="True"
+                                 Background="Transparent"
+                                 Visibility="Hidden"
+                                 IsReadOnly="{TemplateBinding IsReadOnly}" />
+                                                        <Popup x:Name="Popup"
+                               Placement="Bottom"
+                               IsOpen="{TemplateBinding IsDropDownOpen}"
+                               AllowsTransparency="True"
+                               Focusable="False"
+                               PopupAnimation="Slide">
+                                                            <Grid x:Name="DropDown"
+                                  SnapsToDevicePixels="True"
+                                  MinWidth="{TemplateBinding ActualWidth}"
+                                  MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                                                <Border x:Name="DropDownBorder"
+                                        Background="White"
+                                        BorderThickness="1"
+                                        BorderBrush="Black" />
+                                                                <ScrollViewer Margin="4,6,4,6"
+                                              SnapsToDevicePixels="True">
+                                                                    <StackPanel IsItemsHost="True"
+                                                KeyboardNavigation.DirectionalNavigation="Contained" />
+                                                                </ScrollViewer>
+                                                            </Grid>
+                                                        </Popup>
+                                                    </Grid>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ComboBox.Style>
+                            <ComboBoxItem Content="ComboBoxItem"/>
+                        </ComboBox>
+                        <TextBox x:Name="edit_srmID3" Grid.Row="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" BorderBrush="#FFB8D8FC" Foreground="White" Background="{x:Null}" VerticalAlignment="Stretch">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBox x:Name="edit_srmRow3" Grid.Row="4" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" BorderBrush="#FFB8D8FC" Foreground="White" Background="{x:Null}" VerticalAlignment="Stretch">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBox x:Name="edit_srmBay3" Grid.Row="5" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" BorderBrush="#FFB8D8FC" Foreground="White" Background="{x:Null}" VerticalAlignment="Stretch">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBox x:Name="edit_srmLev3" Grid.Row="6" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" BorderBrush="#FFB8D8FC" Foreground="White" Background="{x:Null}" VerticalAlignment="Stretch">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBox x:Name="edit_srmStn3" Grid.Row="7" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" BorderBrush="#FFB8D8FC" Foreground="White" Background="{x:Null}" VerticalAlignment="Stretch">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <ComboBox x:Name="combo_Station3" Grid.Row="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{x:Null}">
+                            <ComboBox.Style>
+                                <Style TargetType="{x:Type ComboBox}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type ComboBox}">
+                                                <Border BorderThickness="1,1,1,1"
+                                    BorderBrush="#FFB8D8FC" CornerRadius="5,5,5,5">
+                                                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="3,3,3,3">
+                                                        <ToggleButton x:Name="ToggleButton"
+                                            Grid.Column="2"
+                                            Focusable="False"
+                                            IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                            ClickMode="Press" Background="#02000000" BorderThickness="0"/>
+                                                        <ContentPresenter x:Name="ContentSite"
+                                            IsHitTestVisible="False"
+                                            Content="{TemplateBinding SelectionBoxItem}"
+                                            ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                            ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                            VerticalAlignment="Stretch"
+                                            HorizontalAlignment="Stretch" Width="108" Height="21" Grid.ColumnSpan="1"/>
+                                                        <TextBox x:Name="PART_EditableTextBox"
+                                            Style="{x:Null}"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Center"
+                                            Margin="3,3,23,3"
+                                            Focusable="True"
+                                            Background="Transparent"
+                                            Visibility="Hidden"
+                                            IsReadOnly="{TemplateBinding IsReadOnly}" />
+                                                        <Popup x:Name="Popup"
+                                            Placement="Bottom"
+                                            IsOpen="{TemplateBinding IsDropDownOpen}"
+                                            AllowsTransparency="True"
+                                            Focusable="False"
+                                            PopupAnimation="Slide">
+                                                            <Grid x:Name="DropDown"
+                                                SnapsToDevicePixels="True"
+                                                MinWidth="{TemplateBinding ActualWidth}"
+                                                MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                                                <Border x:Name="DropDownBorder"
+                                                    BorderThickness="1"
+                                                    BorderBrush="Black" Background="#33FFFFFF" />
+                                                                <ScrollViewer Margin="10,10,10,10"
+                                                    SnapsToDevicePixels="True">
+                                                                    <StackPanel IsItemsHost="True"
+                                                        KeyboardNavigation.DirectionalNavigation="Contained" />
+                                                                </ScrollViewer>
+                                                            </Grid>
+                                                        </Popup>
+                                                    </Grid>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ComboBox.Style>
+                            <ListBoxItem Content="한국어" Height="20"/>
+                            <ListBoxItem Content="영어"/>
+                            <ListBoxItem Content="중국어"/>
+                            <ComboBoxItem Content="ComboBoxItem" Height="20" Foreground="White"/>
+                        </ComboBox>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+        <Border Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="39*"/>
+                    <RowDefinition Height="80*"/>
+                </Grid.RowDefinitions>
+                <Border Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0">
+                    <Label Content="기타 설정" Margin="9,5,9,6" Height="34" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.519,0.501" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
+                </Border>
+                <GridSplitter HorizontalAlignment="Left" Height="2" Margin="0,0,0,5" VerticalAlignment="Top" Width="780" Grid.Row="1"/>
+                <Border Grid.Row="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="15*"/>
+                            <ColumnDefinition Width="20*"/>
+                            <ColumnDefinition Width="70*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="언어설정" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                        <ComboBox x:Name="combo_Lang" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="120" SelectionChanged="ComboBox_SelectionChanged" Height="33" Grid.Column="1">
+                            <ListBoxItem Content="{lx:Loc 한국어}" Height="20" Foreground="White"/>
+                            <ListBoxItem Content="{lx:Loc 영어}" Height="20" Foreground="White"/>
+                            <ListBoxItem Content="{lx:Loc 중국어}" Height="20" Foreground="White"/>
+                        </ComboBox>
+                    </Grid>
+                </Border>
+                <Button x:Name="btn_Save" Content="저장" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" Background="#02000000" Foreground="#FFB8D8FC" BorderBrush="#FFB8D8FC" FontWeight="Bold" Width="100" Height="50" Margin="0,5,5,5" Click="Button_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="3"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

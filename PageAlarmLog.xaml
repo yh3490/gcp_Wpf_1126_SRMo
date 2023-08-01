@@ -1,0 +1,91 @@
+﻿<Page x:Class="gcp_Wpf.PageAlarmLog"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:gcp_Wpf"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageAlarmLog">
+    <Grid>
+        <TabControl Background="{x:Null}">
+            <TabControl.Resources>
+                <Style TargetType="{x:Type TabItem}">
+                    <Setter Property="Background" Value="#00808080"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontSize" Value="14"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="Padding" Value="5"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="#00000000"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TabControl.Resources>
+            <TabItem Header="이상내역">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="349*">
+                        </RowDefinition>
+                    </Grid.RowDefinitions>
+                    <DataGrid x:Name="AlarmList" Grid.Row="2" AutoGenerateColumns="False" CanUserAddRows="False" RowHeaderWidth="0">
+                        <DataGrid.Style>
+                            <Style TargetType="{x:Type DataGrid}">
+                                <Setter Property="Background" Value="#19D3D3D3"/>
+                                <Setter Property="BorderBrush" Value="#00808080"/>
+                                <Setter Property="BorderThickness" Value="1"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="Padding" Value="5"/>
+                            </Style>
+                        </DataGrid.Style>
+                        <DataGrid.ColumnHeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="#19808080"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                                <Setter Property="Padding" Value="5"/>
+                            </Style>
+                        </DataGrid.ColumnHeaderStyle>
+                        <DataGrid.RowStyle>
+                            <Style TargetType="{x:Type DataGridRow}">
+                                <Setter Property="Background" Value="#19FFFFFF"/>
+                                <Setter Property="Foreground" Value="#7FADD8E6"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                        <Setter Property="Foreground" Value="White"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.RowStyle>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="No." Binding="{Binding Path=errNum}" Width="30"/>
+                            <DataGridTextColumn Header="발생일시" Binding="{Binding Path=occuredTime}" Width="150"/>
+                            <DataGridTextColumn Header="에러코드" Binding="{Binding Path=errCode}" Width="100"/>
+                            <DataGridTextColumn Header="서브코드" Binding="{Binding Path=subCode}" Width="100"/>
+                            <DataGridTextColumn Header="이상내역" Binding="{Binding Path=errContent}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="이상코드 리스트">
+                <Grid Background="#1DE5E5E5">
+                    <DataGrid x:Name="AlarmCodeList">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="No." Binding="{Binding Path=name}" Width="130"/>
+                            <DataGridTextColumn Header="학번" Binding="{Binding Path=id}" Width="130"/>
+                            <DataGridTextColumn Header="학과" Binding="{Binding Path=major}" Width="180"/>
+                            <DataGridTextColumn Header="학년" Binding="{Binding Path=grade}" Width="100"/>
+                            <DataGridTextColumn Header="비고" Binding="{Binding Path=etc}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Page>
